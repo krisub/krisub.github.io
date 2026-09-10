@@ -109,5 +109,9 @@ function renderStatus() {
 }
 
 fetchDiscordStatus();
-setInterval(fetchDiscordStatus, 10000);
+setInterval(() => {
+    if (!document.hidden) {
+        fetchDiscordStatus();
+    }
+}, 10000);
 setInterval(renderStatus, 1000);
