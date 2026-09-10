@@ -1,143 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>~krisub everywhere.</title>
     <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            background-color: #DEDEDE;
-            color: black;
-            margin: 20px;
-            /* centering */
-            /* margin-left: 23%; */
-            /* margin-right: 23%; */
-            line-height: 1.6;
-            font-size: 1em;
-        }
+      body {
+          font-family: "Times New Roman", Times, serif;
+          background-color: #DEDEDE;
+          color: black;
+          margin: 20px;
+          line-height: 1.6;
+          font-size: 1em;
+      }
 
-        /* Apply half-width only on laptops/desktops (768px and up) */
-        @media (min-width: 768px) {
-            body {
-                max-width: 50vw;
-            }
-        }
+      /* Apply half-width only on laptops/desktops (768px and up) */
+      @media (min-width: 768px) {
+          body {
+              max-width: 50vw;
+          }
+      }
 
-        h1, h2 {
-            font-weight: bold;
-            word-wrap: break-word;  /* Ensure the text in h2 wraps if needed */
-            overflow-wrap: break-word;
-            max-width: 50ch;
-            display: block;
-            width: 100%;
-            font-size: 1.2em;
-        }
-        a {
-            color: black;
-            text-decoration: underline;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        section p, footer p {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            max-width: 128ch; /* Limits line length to 100 characters */
-        }
+      h1, h2 {
+          font-weight: bold;
+          word-wrap: break-word;  /* Ensure the text in h2 wraps if needed */
+          overflow-wrap: break-word;
+          max-width: 50ch;
+          display: block;
+          width: 100%;
+          font-size: 1.2em;
+      }
+      a {
+          color: black;
+          text-decoration: underline;
+      }
+      section {
+          margin-bottom: 30px;
+      }
+      section p, footer p {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          max-width: 128ch; /* Limits line length to 100 characters */
+      }
 
-        /* Optional: Media query for adjusting wrapping at larger screen sizes */
-        @media (min-width: 768px) {
-            section p, footer p {
-                max-width: 128ch;
-            }
-        }
-
+      @media (min-width: 768px) {
+          section p, footer p {
+              max-width: 128ch;
+          }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <h2>Krithi Sub</h2>
-    <p style="font-size: 0.7em;">
-    (the resident utcs kiwi)<br style="line-height: 0;">
-    B.S. UTCS exp. May/Dec 2026<br style="line-height: 0;">
-    <!--
-    Pursuing an MLDS Certification at Cornell University exp. May 2025<br style="line-height: 0;">
-    -->  
-    </p>
-    
+    <div id="discord-status"></div>
+    <p style="font-size: 0.7em;"></p>
+
     <section>
-        <p>krisub@cs.utexas.edu:~$ <a href="https://krisub.github.io/" target="_blank">whoami</a></p>
-        <p>Hi, I'm Krithi. Welcome to my corner of UTCS. I am deeply passionate about computer science, and especially fascinated by the synergy between machine learning and systems engineering. The potential to create heterogenous systems that not only operate efficiently but also learn and adapt is an open field, and I would like to explore how OS-level optimization can support scalable machine learning models, enhancing both performance and flexibility. This intersection excites me because it allows for innovative applications, from efficient resource management in real-time systems to the development of intelligent, autonomous processes. Pursuing knowledge in these fields drives me to push the boundaries of what's possible in computing.</p>
-        <p>My goal, in both computer science and life, is to create tools and solutions that have a lasting positive impact on the world. I believe that technology has the power to break down barriers, improve access to resources, and solve problems that might otherwise feel insurmountable. Through my work at UT and beyond, I hope to contribute to projects that make people's lives easier and expand opportunities for connection, learning, and growth. Whether it's through designing more efficient systems, developing intelligent applications, or finding new ways to use data to inform decision-making, I am driven by a strong commitment to use my skills to leave a positive mark on the world around me.</p>
+      <p>
+        krisub@cs.utexas.edu:~$
+        <a href="https://krisub.github.io/" target="_blank">whoami</a>
+      </p>
+      <p>
+        Hi, I'm Krithi. Welcome to my corner of UTCS. I am deeply passionate
+        about computer science, and especially fascinated by the synergy between
+        machine learning and systems engineering. The potential to create
+        heterogenous systems that not only operate efficiently but also learn
+        and adapt is an open field, and I would like to explore how OS-level
+        optimization can support scalable machine learning models, enhancing
+        both performance and flexibility. This intersection excites me because
+        it allows for innovative applications, from efficient resource
+        management in real-time systems to the development of intelligent,
+        autonomous processes. Pursuing knowledge in these fields drives me to
+        push the boundaries of what's possible in computing.
+      </p>
+      <p>
+        My goal, in both computer science and life, is to create tools and
+        solutions that have a lasting positive impact on the world. I believe
+        that technology has the power to break down barriers, improve access to
+        resources, and solve problems that might otherwise feel insurmountable.
+        Through my work at UT and beyond, I hope to contribute to projects that
+        make people's lives easier and expand opportunities for connection,
+        learning, and growth. Whether it's through designing more efficient
+        systems, developing intelligent applications, or finding new ways to use
+        data to inform decision-making, I am driven by a strong commitment to
+        use my skills to leave a positive mark on the world around me.
+      </p>
     </section>
 
     <section>
-    <h2>My current work...</h2>
+      <h2>My current work...</h2>
 
-    <p><strong>Building a JAX-based trainers framework for Gemma models.</strong> – I recently built an end-to-end sequence training pipeline for training and finetuning various Transformer models, including the Gemma3 series. It supports preprocessing, data loading, and distributed training via partitioning of sharded data. Current work involves building sequence classification or collation alternatives, integration for sparse embeddings, and preconfigured sharding strategies.
+      <p>
+        <strong
+          >Building a JAX-based trainers framework for Gemma models.</strong
+        >
+        – I recently built an end-to-end sequence training pipeline for training
+        and finetuning various Transformer models, including the Gemma3 series.
+        It supports preprocessing, data loading, and distributed training via
+        partitioning of sharded data. Current work involves building sequence
+        classification or collation alternatives, integration for sparse
+        embeddings, and preconfigured sharding strategies.
+      </p>
 
-    <p><strong>Research under the LDOS team with Dr. Aditya Akella.</strong> – At <a href="https://ldos.utexas.edu/" target="_blank">LDOS</a>, my goal is to enhance the adaptability and efficiency of OS resource management by creating models capable of handling dynamic, real-world scenarios. I am currently exploring the efficacy of an adaptive caching oracle using a contextual bandit to dynamically select an optimal eviction heuristic based on real-time data access patterns. The goal is to learn which policy maximizes cache performance for a given workload, as well as create better-suited heuristics when no options perform well (using evolutionary search techniques detailed in AlphaEvolve).</p>
-    
+      <p>
+        <strong>Research under the LDOS team with Dr. Aditya Akella.</strong> –
+        At <a href="https://ldos.utexas.edu/" target="_blank">LDOS</a>, my goal
+        is to enhance the adaptability and efficiency of OS resource management
+        by creating models capable of handling dynamic, real-world scenarios. I
+        am currently exploring the efficacy of an adaptive caching oracle using
+        a contextual bandit to dynamically select an optimal eviction heuristic
+        based on real-time data access patterns. The goal is to learn which
+        policy maximizes cache performance for a given workload, as well as
+        create better-suited heuristics when no options perform well (using
+        evolutionary search techniques detailed in AlphaEvolve).
+      </p>
 
-    <p><strong>Building a neural network for YouTube video forecasting.</strong> – I am working on optimizing predictive models for YouTube video performance. This involves using early engagement metrics, video metadata, and trends to improve predictive accuracy. The best performing model was a fully connected LSTM neural network, with refined architecture and tuned hyperparameters. Current work involves developing a two-stage cascade prediction pipeline including a baseline model prediction routed to an appropriate range-specific model (each trained on a subset of data matching a range of view counts).</p>
-
+      <p>
+        <strong
+          >Building a neural network for YouTube video forecasting.</strong
+        >
+        – I am working on optimizing predictive models for YouTube video
+        performance. This involves using early engagement metrics, video
+        metadata, and trends to improve predictive accuracy. The best performing
+        model was a fully connected LSTM neural network, with refined
+        architecture and tuned hyperparameters. Current work involves developing
+        a two-stage cascade prediction pipeline including a baseline model
+        prediction routed to an appropriate range-specific model (each trained
+        on a subset of data matching a range of view counts).
+      </p>
     </section>
 
     <section>
+      <h2>My past work...</h2>
+      <p>
+        <strong
+          ><a href="HBPDD_Research.pdf" target="_blank"
+            >Handwriting Based Parkinson's Disease Diagnosis</a
+          ></strong
+        >
+        – During this research project, I developed a neural network to
+        determine the likelihood of a patient having a positive diagnosis of
+        Parkinson's Disease by analyzing a handwriting sample in conjunction
+        with the timestamps of each pixel while writing. This is one of my
+        favorite projects that I've worked on, as it allowed me to apply machine
+        learning to a real-world medical problem with the potential to improve
+        early diagnosis and patient outcomes.
+      </p>
 
-    <h2>My past work...</h2>
+      <p>
+        <strong
+          ><a href="DSOM_Research.pdf" target="_blank"
+            >Determining Soil Organic Matter</a
+          ></strong
+        >
+        – My first foray into machine learning, years ago! This was a research
+        project where I developed a regression model in combination with a
+        mobile app to predict the amount of organic matter in soil, with the
+        hopes of reliably testing soil samples for their compositions just by
+        using a phone camera.
+      </p>
 
-<!--
-    <p><strong>Research under UT Austin's Astronomy department with Dr. Shyamal Mitra.</strong> – I am actively involved in astronomy research as part of the College of Natural Sciences Research Initiative, where I develop and test machine learning models to classify low-surface brightness galaxies. My work involves using advanced techniques like XGBoost and neural networks, alongside tools like TensorFlow and Astropy, to streamline galaxy type identification.</p>
--->
-    
-    <p><strong><a href="HBPDD_Research.pdf" target="_blank">Handwriting Based Parkinson's Disease Diagnosis</a></strong> – During this research project, I developed a neural network to determine the likelihood of a patient having a positive diagnosis of Parkinson's Disease by analyzing a handwriting sample in conjunction with the timestamps of each pixel while writing. This is one of my favorite projects that I've worked on, as it allowed me to apply machine learning to a real-world medical problem with the potential to improve early diagnosis and patient outcomes.</p> 
-
-    <p><strong><a href="DSOM_Research.pdf" target="_blank">Determining Soil Organic Matter</a></strong> – My first foray into machine learning, years ago! This was a research project where I developed a regression model in combination with a mobile app to predict the amount of organic matter in soil, with the hopes of reliably testing soil samples for their compositions just by using a phone camera.</p>    
-
-<!--
+      <p>
+        <strong
+          >Determining Abnormal Breathing Patterns for COVID-19
+          Diagnosis</strong
+        >
+        – The aim of the study was to develop a non-invasive app that allowed
+        users to assess their respiratory health by analyzing audio waveforms of
+        their breathing patterns, providing a simple tool for early COVID-19
+        diagnosis. I compared the app's results with FDA-approved pulse
+        oximeters, and the research demonstrated the potential to offer a
+        reliable self-assessment method, expanding knowledge in computerized
+        respiratory sound analysis for better patient accessibility.
+      </p>
     </section>
-
-    <section>
-    <h2>Projects I hope to revisit...</h2>
-    
-    <p><strong><a href="https://github.com/krisub/wics_hacks_24" target="_blank">Treatsi</a></strong> – Did you know that small businesses make up 99% of U.S. businesses? They provide over half of all jobs, yet they struggle with funding, visibility, and survival, with nearly 45% failing within five years. Treatsi is a web application that addresses this by spotlighting local cafes and restaurants, offering customers a unique marketplace and incentivizing repeat visits through a rewards system, while empowering minority-owned businesses and providing entrepreneurs with valuable analytics to strengthen their models.</p>
-
-    <p><strong><a href="https://github.com/ECLAIR-Robotics/Beginners-Track" target="_blank">ECLAIR Raspi Project!</a></strong> – A few semesters ago, I led the ECLAIR Robotics Beginner's Track, and I'm super proud of what the team was able to create despite having little to no experience with full-stack development. The end result was a Raspberry Pi that mimicked a home automation system: with a mobile app on our phone, we could say "Turn on the light," and a lightbulb on the Raspi would light up accordingly. It was such a fun project and I loved teaching and helping my team.</p>
--->
-    <p><strong>Determining Abnormal Breathing Patterns for COVID-19 Diagnosis</strong> – The aim of the study was to develop a non-invasive app that allowed users to assess their respiratory health by analyzing audio waveforms of their breathing patterns, providing a simple tool for early COVID-19 diagnosis. I compared the app's results with FDA-approved pulse oximeters, and the research demonstrated the potential to offer a reliable self-assessment method, expanding knowledge in computerized respiratory sound analysis for better patient accessibility.</p> 
-   
-    </section>
-
-    <!-- <p><br><br></p> -->
 
     <div style="text-align: left; margin: 30px 0;">
-        <a href="https://utcs-webring.krisub.workers.dev/prev?from=https://krisub.github.io/">←</a> |
-        <a href="https://krisub.github.io/utcs-webring/"><strong>🥝</strong></a>
-        (<a href="https://utcs-webring.krisub.workers.dev/random?from=https://krisub.github.io/"><strong>random</strong></a>) |
-        <a href="https://utcs-webring.krisub.workers.dev/next?from=https://krisub.github.io/">→</a>
+      <a
+        href="https://utcs-webring.krisub.workers.dev/prev?from=https://krisub.github.io/"
+        >←</a
+      >
+      |
+      <a href="https://krisub.github.io/utcs-webring/"><strong>🥝</strong></a>
+      (<a
+        href="https://utcs-webring.krisub.workers.dev/random?from=https://krisub.github.io/"
+        ><strong>random</strong></a
+      >) |
+      <a
+        href="https://utcs-webring.krisub.workers.dev/next?from=https://krisub.github.io/"
+        >→</a
+      >
     </div>
 
-    <p>Thank you for reading! If you would like to get to know me more, contact me at 'krisub at utexas dot edu'.</p>
-    
     <p>
-        <a href="https://linkedin.com/in/krisub/" target="_blank">You can connect with me on LinkedIn</a> | 
-        <a href="https://github.com/krisub" target="_blank">or check out my GitHub.</a>
+      Thank you for reading! If you would like to get to know me more, contact
+      me at 'krisub at utexas dot edu'.
+    </p>
+
+    <p>
+      <a href="https://linkedin.com/in/krisub/" target="_blank"
+        >You can connect with me on LinkedIn</a
+      >
+      |
+      <a href="https://github.com/krisub" target="_blank"
+        >or check out my GitHub.</a
+      >
     </p>
 
     <footer>
       <p style="font-size: 0.8em;">
-        While much of the code behind my research projects is <em>not</em> publicly available, I am always eager to discuss the development process in more detail. If you are particularly curious, please reach out via email—I am happy to share insights and engage in a thoughtful conversation about my work.
+        While much of the code behind my research projects is
+        <em>not</em> publicly available, I am always eager to discuss the
+        development process in more detail. If you are particularly curious,
+        please reach out via email—I am happy to share insights and engage in a
+        thoughtful conversation about my work.
       </p>
     </footer>
 
+    <script src="status.js"></script>
     <script>
-      fetch("https://visitor-logger.krisub.workers.dev", { 
-        method: "POST" 
-      }).catch(console.error);
+      fetch('https://visitor-logger.krisub.workers.dev', {
+        method: 'POST',
+      }).catch(console.error)
     </script>
-    
-</body>
-
+  </body>
 </html>
