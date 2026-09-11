@@ -42,7 +42,7 @@ function renderStatus() {
   let html = `<p style="margin-bottom: 5px;">I am:</p>`;
 
   let statusText = data.discord_status.charAt(0) + data.discord_status.slice(1);
-  if (statusText === "Dnd") statusText = "DND";
+  if (statusText === "dnd") statusText = "DND";
   html += `<div style="display: grid; grid-template-columns: 16px 20px 1fr; align-items: center; gap: 8px; margin-bottom: 5px;">
                 <div style="display: flex; justify-content: center;">
                     ${statusIcons[data.discord_status] || statusIcons.offline}
